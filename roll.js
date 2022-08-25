@@ -4,13 +4,10 @@ const handleRoll = (numberOfDie, sidedDie) => {
 
     $div.innerText = `d${sidedDie} - ${Math.floor(Math.random() * sidedDie) + 1}`
     $display.append($div)
-    console.log(`x${numberOfDie} d${sidedDie}`)
-    console.log($div.innerText)
+
     if (numberOfDie > 1) {
         numberOfDie--
         handleRoll(numberOfDie, sidedDie)
-    } else {
-        return
     }
 
 }
