@@ -7,38 +7,66 @@
 
     <script type="text/javascript" src="roll.js"></script>
 
-    <title>Document</title>
+    <title>d20</title>
+    <style>
+        body {
+            outline: 1px dashed rgb(5, 136, 103);
+        }
+
+        .main-container {
+            background-color: black;
+            width: 150px;
+            margin: 0 auto;
+        }
+        
+        .options {
+            display: flex;
+            align-items: center;
+            background-color: aqua;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        .roll {
+            display: flex;
+            align-items: center;
+            background-color: blueviolet;
+            margin: 0 auto;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
-    <div class="options">
-        <label for="number_of_die"></label>
-        <select name="xdie" id="number_of_die">
-            <option value="1" selected>x1</option>
-            <option value="2">x2</option>
-            <option value="3">x3</option>
-            <option value="4">x4</option>
-            <option value="5">x5</option>
-            <option value="6">x6</option>
-            <option value="7">x7</option>
-            <option value="8">x8</option>
-        </select>
+    <div class="main-container">
+        <div class="options">
+            <label for="number_of_die"></label>
+            <select name="xdie" id="number_of_die">
+                <option value="1" selected>x1</option>
+                <option value="2">x2</option>
+                <option value="3">x3</option>
+                <option value="4">x4</option>
+                <option value="5">x5</option>
+                <option value="6">x6</option>
+                <option value="7">x7</option>
+                <option value="8">x8</option>
+            </select>
 
-        <label for="sided_die"></label>
-        <select name="sides" id="sided_die">
-            <option value="4">d4</option>
-            <option value="6">d6</option>
-            <option value="8">d8</option>
-            <option value="10">d10</option>
-            <option value="12">d12</option>
-            <option value="20" selected>d20</option>
-        </select>
-
-    </div>
-
-    <div class="roll">
-        <button id="btn" onclick="handleRoll(number_of_die.value, sided_die.value)">Roll!</button>
-        <button id="clr" onclick="clearRolls()">clr</button>
-
+            <label for="sided_die"></label>
+            <select name="sides" id="sided_die">
+                <option value="4">d4</option>
+                <option value="6">d6</option>
+                <option value="8">d8</option>
+                <option value="10">d10</option>
+                <option value="12">d12</option>
+                <option value="20" selected>d20</option>
+            </select>
+        </div>
+        
+        <div class="roll">
+            <button id="btn" onclick="handleRoll(number_of_die.value, sided_die.value)">Roll!</button>
+            <button id="clr" onclick="clearRolls()">clr</button>
+            
+        </div>
     </div>
     <div class="display"></div>
 
