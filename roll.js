@@ -15,5 +15,9 @@ const handleRoll = (numberOfDie, sidedDie) => {
 const clearRolls = () => {
     const $display = document.querySelector('.display')
     $display.innerText = ''
-    window.console.clear()
+}
+
+const setRolls = (numberOfDie, sidedDie) => {
+    clearRolls()
+    handleRoll(numberOfDie, sidedDie)
 }
