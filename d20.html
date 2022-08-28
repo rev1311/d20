@@ -12,35 +12,38 @@
         * {
             margin: 0;
             padding: 0;
-            outline: 1px dashed rgb(005, 136, 103);
-            overflow: hidden;
+            /* outline: 1px dashed rgb(005, 136, 103); */
         }
 
         .main-container {
             display: grid;
-            background-image: url(assets/d20_bg5.png);
+            background-image: url(assets/d20_bg1.png);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-color: rgb(037, 037, 037);
             min-height: 100vh;
             min-width: 100vw;
+            overflow: hidden;
         }
         
         .options {
             background-color: rgba(43, 43, 43, 0.3);
-            width: min(400px, 100vw);
+            width: min(400px, 80vw);
             height: fit-content;
+            align-items: center;
             padding: 3em;
             margin-top: 20%;
             margin-inline: auto;
             border-radius: 15px;
             backdrop-filter: blur(5px);
-            box-shadow: 2px 0 8px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 0 8px 5px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+
         }
 
         .options select {
-            width: min(100vw, 150px);
+            width: min(100vw, 50%);
             margin-inline: auto;
         }
 
@@ -53,17 +56,18 @@
             margin: auto;
         }
 
-        .roll button {
-            padding: 20px 40px;
-            margin-inline: auto;
-            color: aqua;
-            border-radius: 15px;
-        }
-
         .display {
-            width: min(100vw, 200px);
+            width: min(100%, 400px);
             font-size: 2rem;
             color: rgb(196, 196, 196);
+        }
+
+        .btn {
+           padding: 1em 3em; 
+           margin: 1em 3em; 
+           border-radius: 0.75em;
+           border-color: rgb(255, 255, 255);
+           border-style: none;
         }
     </style>
 </head>
@@ -94,8 +98,8 @@
             </select>
             
             <div class="roll">
-                <button id="btn" onclick="setRolls(number_of_die.value, sided_die.value)">Roll!</button>
-                <button id="clr" onclick="clearRolls()">clr</button>
+                <button id="btn" class="btn" onclick="setRolls(number_of_die.value, sided_die.value)">Roll!</button>
+                <button id="clr" class="btn" onclick="clearRolls()">clr</button>
                 
             </div>
             <div class="display"></div>
