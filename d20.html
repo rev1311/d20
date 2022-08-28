@@ -9,30 +9,33 @@
 
     <title>d20</title>
     <style>
-        body {
+        * {
             outline: 1px dashed rgb(5, 136, 103);
         }
 
         .main-container {
+            display: grid;
             background-color: black;
-            width: 150px;
-            margin: 0 auto;
+            width: min(500px, 80vw);
+            height: 100vh;
+            margin: auto;
         }
         
         .options {
-            display: flex;
-            align-items: center;
             background-color: aqua;
-            margin: 0 auto;
+            width: min(400px, 70vw);
             padding: 15px;
+            margin: auto;
         }
         
         .roll {
-            display: flex;
-            align-items: center;
             background-color: blueviolet;
-            margin: 0 auto;
             padding: 15px;
+            margin: auto;
+        }
+
+        .roll button {
+            margin: auto;
         }
     </style>
 </head>
@@ -50,7 +53,7 @@
                 <option value="7">x7</option>
                 <option value="8">x8</option>
             </select>
-
+            
             <label for="sided_die"></label>
             <select name="sides" id="sided_die">
                 <option value="4">d4</option>
@@ -60,12 +63,12 @@
                 <option value="12">d12</option>
                 <option value="20" selected>d20</option>
             </select>
-        </div>
-        
-        <div class="roll">
-            <button id="btn" onclick="handleRoll(number_of_die.value, sided_die.value)">Roll!</button>
-            <button id="clr" onclick="clearRolls()">clr</button>
             
+            <div class="roll">
+                <button id="btn" onclick="handleRoll(number_of_die.value, sided_die.value)">Roll!</button>
+                <button id="clr" onclick="clearRolls()">clr</button>
+                
+            </div>
         </div>
     </div>
     <div class="display"></div>
