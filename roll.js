@@ -25,3 +25,24 @@ const setRolls = (numberOfDie, sidedDie) => {
     clearRolls()
     handleRoll(numberOfDie, sidedDie)
 }
+
+const setDice = (id) => {
+    const $display = document.querySelector('.display')
+    const $div = document.createElement('div')
+    const $id = document.querySelector(`#${id}`)
+    const $node = $id.cloneNode()
+
+    $node.classList.remove('filter')
+
+    if($display.childElementCount >= 6) return
+
+    $div.append($node)
+    $display.append($div)
+    
+}
+
+document.addEventListener('click', (e) => {
+    e.preventDefault()
+    let ele = e.target
+    ele.id.includes('dice') && setDice(ele.id)
+})
