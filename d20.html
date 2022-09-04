@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             letter-spacing: 0.15em;
-            outline: 1px dashed rgb(005, 136, 103);
+            /* outline: 1px dashed rgb(005, 136, 103); */
         }
 
         .main-container {
@@ -39,12 +39,6 @@
             backdrop-filter: blur(5px);
             box-shadow: 2px 0 8px 5px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-
-        }
-
-        .options select {
-            width: min(100vw, 50%);
-            margin-inline: auto;
         }
 
         .selectDice {
@@ -53,7 +47,7 @@
             height: auto;
             place-content: center center;
         }
-
+        
         .staticDice {
             background-size: contain;
             width: 3.5em;
@@ -62,26 +56,15 @@
             margin: 5px;
         }
         
-        .roll {
-            display: flex;
-            padding: 15px;
-            place-content: center right;
-        }
-
-        .total {
-            font-size: 4em;
+        .filter, .filter:visited {
+            filter: grayscale(100%);
+            transition: ease-in-out 0.4s;
         }
         
-        .btn {
-            background-color: rgba(253, 253, 253, 0.3);
-            color: #fff;
-            padding: 1em 3em; 
-            margin: 1em 3em; 
-            border-radius: 0.25em;
-            border-color: rgb(0, 0, 0);
-            border-style: none;
+        .filter:hover, .filter:active {
+            filter: grayscale(0%);
         }
-
+        
         .display {
             /* background-color: aqua; */
             display: flex;
@@ -91,14 +74,37 @@
             color: rgb(196, 196, 196);
             place-content: center center;
         }
+        
+        .roll {
+            display: flex;
+            padding: 15px;
+            place-content: center right;
+        }
+        
+        .total {
+            font-size: 4em;
+        }
+        
+        .btn {
+            background-color: rgba(253, 253, 253, 0.3);
+            color: #fff;
+            padding: 1em 3em; 
+            margin: 1em; 
+            border-radius: 0.25em;
+            border-color: rgb(0, 0, 0);
+            border-style: none;
+        }
+        
+        .clrbtn {
+            background-color: rgba(253, 253, 253, 0.3);
+            color: #fff;
+            padding: 1em 3em; 
+            margin: 1em; 
+            border-radius: 0.25em;
+            border-color: rgb(0, 0, 0);
+            border-style: none;
+        }
 
-        .filter, .filter:visited {
-            filter: grayscale(100%);
-            transition: ease-in-out 0.4s;
-        }
-        .filter:hover, .filter:active {
-            filter: grayscale(0%);
-        }
     </style>
 </head>
 
@@ -121,7 +127,7 @@
             <div class="roll">
                 <div class="total"></div>
                 <button id="roll" class="btn" onclick="handleRoll">ROLL!</button>
-                <!-- <button id="clr" class="btn" onclick="clearRolls()">clr</button> -->
+                <button id="clr" class="clrbtn" onclick="clearRolls()">C</button>
                 
             </div>
         </div>
