@@ -44,7 +44,7 @@ const setDice = (id) => {
     $node.classList.remove('filter')
 
     console.log($dataId)
-    console.log($display.firstElementChild.)
+    console.log($display.firstElementChild)
 
     if(($dataset == 'percent' || $dataset == 'coin' || $dataset == 20 ) && $diceCount >= 1 ) return
     if($diceCount >= 6) return
