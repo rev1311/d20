@@ -18,7 +18,6 @@
 
         .main-container {
             display: grid;
-            background-image: url(assets/d20_bg2.png);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -62,22 +61,21 @@
             float: left;
             margin: 5px;
         }
-
-        #number_of_die {
-            float:left;
-        }
         
         .roll {
+            display: flex;
             padding: 15px;
-            margin: auto;
+            place-content: center right;
         }
 
         .display {
             /* background-color: aqua; */
+            display: flex;
             font-size: 1.5em;
             width: 100%;
             height: 4em;
             color: rgb(196, 196, 196);
+            place-content: center center;
         }
 
         .trill {
@@ -124,7 +122,7 @@
 
             <div class="roll">
                 <button id="roll" class="btn" onclick="setRolls(number_of_die.value, sided_die.value)">ROLL!</button>
-                <button id="clr" class="btn" onclick="clearRolls()">clr</button>
+                <!-- <button id="clr" class="btn" onclick="clearRolls()">clr</button> -->
                 
             </div>
         </div>
