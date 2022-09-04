@@ -19,7 +19,7 @@ const handleRoll = () => {
         }
         total += rollMath(dieVal)
         $total.innerText = total
-        
+
     }
 }
 
@@ -30,22 +30,25 @@ const clearRolls = () => {
 
     $display.innerText = ''
     $total.innerText = ''
+
 }
 
 // creates larger, colored dice to be rolled
 const setDice = (id) => {
     const $display = document.querySelector('.display')
+    const $diceCount = $display.childElementCount
     const $div = document.createElement('div')
-    const $div2 = document.createElement('div')
-    const $id = document.querySelector(`#${id}`)
-    const $node = $id.cloneNode()
+    const $node = document.querySelector(`#${id}`).cloneNode()
+    const $dataset = $node.dataset.value
 
     $node.classList.remove('filter')
 
-    if($display.childElementCount >= 6) return
+    if(($dataset == 'percent' || $dataset == 'coin' || $dataset == 20 ) && $diceCount == 1 ) return
+    if($diceCount >= 6) return
 
     $div.append($node)
     $display.append($div)
+
 }
 
 // listens for clicks on static dice & roll button
@@ -54,6 +57,7 @@ document.addEventListener('click', (e) => {
     let ele = e.target
     
     ele.id.includes('dice') && setDice(ele.id)
+
 })
 
 // sets background image to random on window load
@@ -63,8 +67,10 @@ const bgGen = () => {
     const img = `url(assets/d20_bg${selectBkg}.png)`
 
     $main.setAttribute('style', `background-image: ${img}`)
+
 }
 
 window.onload = () => {
     bgGen()
+
 }
