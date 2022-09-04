@@ -15,7 +15,7 @@ Alpha version displaying static dice, selected dice, and roll total
 
 ## Deployed Link
 
-* [Github Repository Page](https://github.com/rev1311/d20)
+* [Live Page](https://rev1311.github.io/d20)
 
 
 ## Authors
