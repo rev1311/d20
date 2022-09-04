@@ -1,6 +1,7 @@
 // does math random for rolls
 const rollMath = (val) => {
-    return Math.floor(Math.random() * val) + 1
+    return Math.floor(Math.random() * val) + 1 
+
 }
 
 // handles rolls & outcomes
@@ -13,10 +14,8 @@ const handleRoll = () => {
         let dieVal = die.firstChild.dataset.value
 
         if (dieVal == "percent") return $total.innerText = `${rollMath(100)}%`
-        if (dieVal == "coin") {
-            if( rollMath(2) == 1 ) return $total.innerText = 'heads'
-            if( rollMath(2) == 2 ) return $total.innerText = 'tails'
-        }
+        if (dieVal == "coin") return rollMath(2) === 1 ? $total.innerText = 'heads' : $total.innerText = 'tails'
+
         total += rollMath(dieVal)
         $total.innerText = total
 
@@ -40,11 +39,16 @@ const setDice = (id) => {
     const $div = document.createElement('div')
     const $node = document.querySelector(`#${id}`).cloneNode()
     const $dataset = $node.dataset.value
+    const $dataId = $node.closest('div').id
 
     $node.classList.remove('filter')
 
-    if(($dataset == 'percent' || $dataset == 'coin' || $dataset == 20 ) && $diceCount == 1 ) return
+    console.log($dataId)
+    console.log($display.firstElementChild.)
+
+    if(($dataset == 'percent' || $dataset == 'coin' || $dataset == 20 ) && $diceCount >= 1 ) return
     if($diceCount >= 6) return
+
 
     $div.append($node)
     $display.append($div)
