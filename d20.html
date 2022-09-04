@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             letter-spacing: 0.15em;
-            /* outline: 1px dashed rgb(005, 136, 103); */
+            outline: 1px dashed rgb(005, 136, 103);
         }
 
         .main-container {
@@ -68,6 +68,20 @@
             place-content: center right;
         }
 
+        .total {
+            font-size: 4em;
+        }
+        
+        .btn {
+            background-color: rgba(253, 253, 253, 0.3);
+            color: #fff;
+            padding: 1em 3em; 
+            margin: 1em 3em; 
+            border-radius: 0.25em;
+            border-color: rgb(0, 0, 0);
+            border-style: none;
+        }
+
         .display {
             /* background-color: aqua; */
             display: flex;
@@ -78,28 +92,12 @@
             place-content: center center;
         }
 
-        .trill {
-            background-color: blue;
-            width: 3.5em;
-            height: 1em;
-        }
-
         .filter, .filter:visited {
             filter: grayscale(100%);
             transition: ease-in-out 0.4s;
         }
         .filter:hover, .filter:active {
             filter: grayscale(0%);
-        }
-
-        .btn {
-            background-color: rgba(253, 253, 253, 0.3);
-            color: #fff;
-            padding: 1em 3em; 
-            margin: 1em 3em; 
-            border-radius: 0.25em;
-            border-color: rgb(0, 0, 0);
-            border-style: none;
         }
     </style>
 </head>
@@ -108,20 +106,21 @@
     <div class="main-container">
         <div class="options">
             <div class="selectDice">
-                <div class="staticDice filter" id="dice_4" style="background-image: url('assets/dice_4.png');"></div>
-                <div class="staticDice filter" id="dice_6" style="background-image: url('assets/dice_6.png');"></div>
-                <div class="staticDice filter" id="dice_8" style="background-image: url('assets/dice_8.png');"></div>
-                <div class="staticDice filter" id="dice_10" style="background-image: url('assets/dice_10.png');"></div>
-                <div class="staticDice filter" id="dice_12" style="background-image: url('assets/dice_12.png');"></div>
-                <div class="staticDice filter" id="dice_20" style="background-image: url('assets/dice_20.png');"></div>
-                <div class="staticDice filter" id="dice_percent" style="background-image: url('assets/dice_percent.png');"></div>
-                <div class="staticDice filter" id="dice_coin" style="background-image: url('assets/dice_4.png');"></div>
+                <div class="staticDice filter" id="dice_4" data-value="4" style="background-image: url('assets/dice_4.png');"></div>
+                <div class="staticDice filter" id="dice_6" data-value="6" style="background-image: url('assets/dice_6.png');"></div>
+                <div class="staticDice filter" id="dice_8" data-value="8" style="background-image: url('assets/dice_8.png');"></div>
+                <div class="staticDice filter" id="dice_10" data-value="10" style="background-image: url('assets/dice_10.png');"></div>
+                <div class="staticDice filter" id="dice_12" data-value="12" style="background-image: url('assets/dice_12.png');"></div>
+                <div class="staticDice filter" id="dice_20" data-value="20" style="background-image: url('assets/dice_20.png');"></div>
+                <div class="staticDice filter" id="dice_percent" data-value="percent" style="background-image: url('assets/dice_percent.png');"></div>
+                <div class="staticDice filter" id="dice_coin" data-value="coin" style="background-image: url('assets/dice_4.png');"></div>
             </div>
             
             <div class="display"></div>
 
             <div class="roll">
-                <button id="roll" class="btn" onclick="setRolls(number_of_die.value, sided_die.value)">ROLL!</button>
+                <div class="total"></div>
+                <button id="roll" class="btn" onclick="handleRoll">ROLL!</button>
                 <!-- <button id="clr" class="btn" onclick="clearRolls()">clr</button> -->
                 
             </div>
