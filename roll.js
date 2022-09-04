@@ -46,3 +46,18 @@ document.addEventListener('click', (e) => {
     let ele = e.target
     ele.id.includes('dice') && setDice(ele.id)
 })
+
+const bgGen = () => {
+    const selectBkg = Math.floor(Math.random() * 17) + 1
+    console.log(selectBkg)
+    const $main = document.querySelector('.main-container')
+    console.log($main)
+    const img = `url(assets/d20_bg${selectBkg}.png)`
+    console.log(img)
+
+    $main.setAttribute('style', `background-image: ${img}`)
+}
+
+window.onload = () => {
+    bgGen()
+}
