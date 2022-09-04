@@ -54,6 +54,14 @@
             place-content: center center;
         }
 
+        .staticDice {
+            background-color: aqua;
+            width: 2.5em;
+            height: 2.5em;
+            float: left;
+            margin: 5px;
+        }
+
         #number_of_die {
             float:left;
         }
@@ -82,7 +90,16 @@
 <body>
     <div class="main-container">
         <div class="options">
-            <div class="selectDice"></div>
+            <div class="selectDice">
+                <div class="staticDice" id="dice_4"></div>
+                <div class="staticDice" id="dice_6"></div>
+                <div class="staticDice" id="dice_8"></div>
+                <div class="staticDice" id="dice_10"></div>
+                <div class="staticDice" id="dice_12"></div>
+                <div class="staticDice" id="dice_20"></div>
+                <div class="staticDice" id="dice_percent"></div>
+                <div class="staticDice" id="dice_coin"></div>
+            </div>
             <label for="number_of_die"></label>
             <select name="xdie" id="number_of_die">
                 <option value="1" selected>x1</option>
