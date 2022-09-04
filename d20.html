@@ -55,7 +55,7 @@
         }
 
         .staticDice {
-            background-color: aqua;
+            background-size: contain;
             width: 2.5em;
             height: 2.5em;
             float: left;
@@ -91,16 +91,16 @@
     <div class="main-container">
         <div class="options">
             <div class="selectDice">
-                <div class="staticDice" id="dice_4"></div>
-                <div class="staticDice" id="dice_6"></div>
-                <div class="staticDice" id="dice_8"></div>
-                <div class="staticDice" id="dice_10"></div>
-                <div class="staticDice" id="dice_12"></div>
-                <div class="staticDice" id="dice_20"></div>
-                <div class="staticDice" id="dice_percent"></div>
-                <div class="staticDice" id="dice_coin"></div>
+                <div class="staticDice" id="dice_4" style="background-image: url('assets/dice_4.png');"></div>
+                <div class="staticDice" id="dice_6" style="background-image: url('assets/dice_6.png');"></div>
+                <div class="staticDice" id="dice_8" style="background-image: url('assets/dice_8.png');"></div>
+                <div class="staticDice" id="dice_10" style="background-image: url('assets/dice_10.png');"></div>
+                <div class="staticDice" id="dice_12" style="background-image: url('assets/dice_12.png');"></div>
+                <div class="staticDice" id="dice_20" style="background-image: url('assets/dice_20.png');"></div>
+                <div class="staticDice" id="dice_percent" style="background-image: url('assets/dice_percent.png');"></div>
+                <div class="staticDice" id="dice_coin" style="background-image: url('assets/dice_4.png');"></div>
             </div>
-            <label for="number_of_die"></label>
+            <!-- <label for="number_of_die"></label>
             <select name="xdie" id="number_of_die">
                 <option value="1" selected>x1</option>
                 <option value="2">x2</option>
@@ -120,7 +120,7 @@
                 <option value="10">d10</option>
                 <option value="12">d12</option>
                 <option value="20" selected>d20</option>
-            </select>
+            </select> -->
             
             <div class="roll">
                 <button id="btn" class="btn" onclick="setRolls(number_of_die.value, sided_die.value)">Roll!</button>
