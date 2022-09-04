@@ -16,6 +16,7 @@ const handleRoll = (numberOfDie, sidedDie) => {
 
 }
 
+// clears dice imgs and counts
 const clearRolls = () => {
     const $display = document.querySelector('.display')
     $display.innerText = ''
@@ -26,6 +27,7 @@ const setRolls = (numberOfDie, sidedDie) => {
     handleRoll(numberOfDie, sidedDie)
 }
 
+// creates larger, colored dice to be rolled
 const setDice = (id) => {
     const $display = document.querySelector('.display')
     const $div = document.createElement('div')
@@ -41,19 +43,18 @@ const setDice = (id) => {
     
 }
 
+// listens for clicks on static dice
 document.addEventListener('click', (e) => {
     e.preventDefault()
     let ele = e.target
     ele.id.includes('dice') && setDice(ele.id)
 })
 
+// sets background image to random on window load
 const bgGen = () => {
     const selectBkg = Math.floor(Math.random() * 17) + 1
-    console.log(selectBkg)
     const $main = document.querySelector('.main-container')
-    console.log($main)
     const img = `url(assets/d20_bg${selectBkg}.png)`
-    console.log(img)
 
     $main.setAttribute('style', `background-image: ${img}`)
 }
