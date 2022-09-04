@@ -12,7 +12,8 @@
         * {
             margin: 0;
             padding: 0;
-            outline: 1px dashed rgb(005, 136, 103);
+            letter-spacing: 0.15em;
+            /* outline: 1px dashed rgb(005, 136, 103); */
         }
 
         .main-container {
@@ -72,10 +73,25 @@
         }
 
         .display {
-            font-size: 2rem;
+            /* background-color: aqua; */
+            font-size: 1.5em;
             width: 100%;
-            height: 5em;
+            height: 4em;
             color: rgb(196, 196, 196);
+        }
+
+        .trill {
+            background-color: blue;
+            width: 3.5em;
+            height: 1em;
+        }
+
+        .filter, .filter:visited {
+            filter: grayscale(100%);
+            transition: ease-in-out 0.4s;
+        }
+        .filter:hover, .filter:active {
+            filter: grayscale(0%);
         }
 
         .btn {
@@ -94,21 +110,21 @@
     <div class="main-container">
         <div class="options">
             <div class="selectDice">
-                <div class="staticDice" id="dice_4" style="background-image: url('assets/dice_4.png');"></div>
-                <div class="staticDice" id="dice_6" style="background-image: url('assets/dice_6.png');"></div>
-                <div class="staticDice" id="dice_8" style="background-image: url('assets/dice_8.png');"></div>
-                <div class="staticDice" id="dice_10" style="background-image: url('assets/dice_10.png');"></div>
-                <div class="staticDice" id="dice_12" style="background-image: url('assets/dice_12.png');"></div>
-                <div class="staticDice" id="dice_20" style="background-image: url('assets/dice_20.png');"></div>
-                <div class="staticDice" id="dice_percent" style="background-image: url('assets/dice_percent.png');"></div>
-                <div class="staticDice" id="dice_coin" style="background-image: url('assets/dice_4.png');"></div>
+                <div class="staticDice filter" id="dice_4" style="background-image: url('assets/dice_4.png');"></div>
+                <div class="staticDice filter" id="dice_6" style="background-image: url('assets/dice_6.png');"></div>
+                <div class="staticDice filter" id="dice_8" style="background-image: url('assets/dice_8.png');"></div>
+                <div class="staticDice filter" id="dice_10" style="background-image: url('assets/dice_10.png');"></div>
+                <div class="staticDice filter" id="dice_12" style="background-image: url('assets/dice_12.png');"></div>
+                <div class="staticDice filter" id="dice_20" style="background-image: url('assets/dice_20.png');"></div>
+                <div class="staticDice filter" id="dice_percent" style="background-image: url('assets/dice_percent.png');"></div>
+                <div class="staticDice filter" id="dice_coin" style="background-image: url('assets/dice_4.png');"></div>
             </div>
             
             <div class="display"></div>
 
             <div class="roll">
-                <button id="roll" class="btn" onclick="setRolls(number_of_die.value, sided_die.value)">Roll!</button>
-                <!-- <button id="clr" class="btn" onclick="clearRolls()">clr</button> -->
+                <button id="roll" class="btn" onclick="setRolls(number_of_die.value, sided_die.value)">ROLL!</button>
+                <button id="clr" class="btn" onclick="clearRolls()">clr</button>
                 
             </div>
         </div>
