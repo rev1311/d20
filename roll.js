@@ -1,7 +1,9 @@
+// does math random for rolls
 const rollMath = (val) => {
     return Math.floor(Math.random() * val) + 1
 }
 
+// handles rolls & outcomes
 const handleRoll = () => {
     const dice = document.querySelector('.display').children
     const $total = document.querySelector('.total')
@@ -44,17 +46,14 @@ const setDice = (id) => {
 
     $div.append($node)
     $display.append($div)
-    
 }
 
-// listens for clicks on static dice
+// listens for clicks on static dice & roll button
 document.addEventListener('click', (e) => {
     e.preventDefault()
     let ele = e.target
     
     ele.id.includes('dice') && setDice(ele.id)
-    ele.id.includes('roll') && handleRoll()
-
 })
 
 // sets background image to random on window load
