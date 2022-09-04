@@ -1,41 +1,33 @@
-// const handleRoll = (numberOfDie, sidedDie) => {
-//     const $display = document.querySelector('.display')
-//     const $div = document.createElement('div')
-
-//     const rolledA = Math.floor(Math.random() * sidedDie) + 1
-//     $div.innerText = `d${sidedDie} - ${rolledA}`
-//     $display.append($div)
-
-//     if (numberOfDie > 1) {
-//         numberOfDie--
-//         handleRoll(numberOfDie, sidedDie)
-//     }
-
-//     sidedDie == 20 && rolledA == 1 && $div.append('CRITICAL FAILURE')
-//     rolledA == 20 && $div.append('NAT 20!!')
-
-// }
+const rollMath = (val) => {
+    return Math.floor(Math.random() * val) + 1
+}
 
 const handleRoll = () => {
-    const $display = document.querySelector('.display')
+    const dice = document.querySelector('.display').children
     const $total = document.querySelector('.total')
-    const dice = $display.children
     let total = 0
-
+    
     for ( let die of dice ) {
-        const dieVal = die.firstChild.dataset.value
-        const rolledA = Math.floor(Math.random() * dieVal) + 1
+        let dieVal = die.firstChild.dataset.value
+
+        if (dieVal == "percent") return $total.innerText = `${rollMath(100)}%`
+        if (dieVal == "coin") {
+            if( rollMath(2) == 1 ) return $total.innerText = 'heads'
+            if( rollMath(2) == 2 ) return $total.innerText = 'tails'
+        }
+        total += rollMath(dieVal)
+        $total.innerText = total
         
-        die.append(rolledA)
-        total += rolledA
     }
-    $total.innerText = total
 }
 
 // clears dice imgs and counts
 const clearRolls = () => {
     const $display = document.querySelector('.display')
+    const $total = document.querySelector('.total')
+
     $display.innerText = ''
+    $total.innerText = ''
 }
 
 // creates larger, colored dice to be rolled
@@ -47,13 +39,10 @@ const setDice = (id) => {
     const $node = $id.cloneNode()
 
     $node.classList.remove('filter')
-    $div2.classList.add('rollVal')
-    $div2.setAttribute('background-color', 'black')
-    $div2.setAttribute('text-align', 'center')
 
     if($display.childElementCount >= 6) return
 
-    $div.append($node, $div2)
+    $div.append($node)
     $display.append($div)
     
 }
