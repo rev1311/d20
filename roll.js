@@ -8,7 +8,11 @@ const rollMath = (val) => {
 const handleRoll = () => {
     const dice = document.querySelector('.display').children
     const $total = document.querySelector('.total')
+    const $roll = document.querySelector('#roll')
     let total = 0
+
+    $roll.classList.remove('material-symbols-outlined#roll:active')
+    $roll.classList.add('material-symbols-outlined#roll:active')
     
     for ( let die of dice ) {
         let dieVal = die.firstChild.dataset.value
@@ -20,6 +24,7 @@ const handleRoll = () => {
         $total.innerText = total
 
     }
+
 }
 
 // clears dice imgs and counts
