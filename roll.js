@@ -71,20 +71,13 @@ window.onload = () => {
     
 }
 
-// listens for clicks on static dice & roll button
+// listens for clicks on static dice, roll, and clear buttons
 document.addEventListener('click', (e) => {
     e.preventDefault()
     let ele = e.target
     
     ele.id.includes('dice') && setDice(ele.id)
-
-})
-
-// listens for clicks on static dice & roll button
-document.addEventListener('click', (e) => {
-    e.preventDefault()
-    let ele = e.target
-    
+    ele.id.includes('roll') && handleRoll()
     ele.id.includes('delete') && clearRolls()
 
 })
