@@ -55,6 +55,22 @@ const setDice = (id) => {
 
 }
 
+
+// sets background image to random on window load
+const bgGen = () => {
+    const $main = document.querySelector('.main-container')
+    const selectBkg = Math.floor(Math.random() * 17) + 1
+    const img = `url(assets/d20_bg${selectBkg}.png)`
+    
+    $main.setAttribute('style', `background-image: ${img}`)
+    
+}
+
+window.onload = () => {
+    bgGen()
+    
+}
+
 // listens for clicks on static dice & roll button
 document.addEventListener('click', (e) => {
     e.preventDefault()
@@ -64,17 +80,11 @@ document.addEventListener('click', (e) => {
 
 })
 
-// sets background image to random on window load
-const bgGen = () => {
-    const $main = document.querySelector('.main-container')
-    const selectBkg = Math.floor(Math.random() * 17) + 1
-    const img = `url(assets/d20_bg${selectBkg}.png)`
+// listens for clicks on static dice & roll button
+document.addEventListener('click', (e) => {
+    e.preventDefault()
+    let ele = e.target
+    
+    ele.id.includes('delete') && clearRolls()
 
-    $main.setAttribute('style', `background-image: ${img}`)
-
-}
-
-window.onload = () => {
-    bgGen()
-
-}
+})
