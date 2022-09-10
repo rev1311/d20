@@ -23,24 +23,39 @@
             padding: 10px;
         }
 
-        .material-symbols-outlined#delete {
+        .material-symbols-outlined#delete,
+        .material-symbols-outlined#delete:visited {
             font-variation-settings:
             'FILL' 0,
             'wght' 400,
             'GRAD' 200,
             'opsz' 40;
             font-size: 20px;
+            opacity: 40%;
+            transition: ease-in 0.2s;
         }
 
-        .material-symbols-outlined#roll {
+        .material-symbols-outlined#delete:active,
+        .material-symbols-outlined#delete:hover {
+            opacity: 80%;
+        }
+
+        .material-symbols-outlined#roll, 
+        .material-symbols-outlined#roll:visited {
             font-variation-settings:
             'FILL' 1,
             'wght' 400,
             'GRAD' 200,
             'opsz' 48;
             font-size: 40px;
+            transform: rotate(45deg);
+            transition: 0.2s;
         }
 
+        .material-symbols-outlined#roll:active {
+            transform: rotate(315deg);
+        }
+        
         .main-container {
             display: grid;
             background-size: cover;
@@ -84,7 +99,7 @@
         
         .filter, .filter:visited {
             filter: grayscale(100%);
-            transition: ease-in-out 0.4s;
+            transition: ease-in-out 0.1s;
         }
 
         .filter:hover, .filter:active {
@@ -92,7 +107,6 @@
         }
         
         .display {
-            /* background-color: aqua; */
             display: flex;
             font-size: 1.5em;
             width: 100%;
@@ -103,12 +117,15 @@
         
         .roll {
             display: flex;
+            height: 70px;
             padding: 15px;
             place-content: center right;
         }
         
         .total {
-            font-size: 4em;
+            color: #fff;
+            font-size: 3.75em;
+            padding-right: 40px;
         }
         
         .btn {
@@ -152,7 +169,7 @@
 
             <div class="roll">
                 <div class="total"></div>
-                <span class="material-symbols-outlined icons" id="roll">casino</span>
+                <span class="material-symbols-outlined icons rollanimation" id="roll">casino</span>
                 <span class="material-symbols-outlined icons" id="delete">block</span>
                 
             </div>
