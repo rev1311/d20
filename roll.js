@@ -43,21 +43,20 @@ const setDice = (id) => {
     const $diceCount = $display.childElementCount
     const $div = document.createElement('div')
     const $node = document.querySelector(`#${id}`).cloneNode()
-    const $dataset = $node.dataset.value
     const $dataId = $node.closest('div').id
-
     $node.classList.remove('filter')
-
-    console.log($dataId)
-    console.log($display.firstElementChild)
-
-    if(($dataset == 'percent' || $dataset == 'coin' || $dataset == 20 ) && $diceCount >= 1 ) return
+    
+    if(($dataId === 'dice_percent' || $dataId === 'dice_coin' || $dataId === 'dice_20' ) && $diceCount >= 1 ) return
     if($diceCount >= 6) return
-
-
+    
+    // let finalForm = $div.parentElement.children[0].firstChild.id
+    
+    // if((finalForm === 'dice_percent' || finalForm === 'dice_coin' || finalForm === 'dice_20') && $diceCount >=1 ) {
+    //     $display.remove($display.lastChild)
+    // }
+    
     $div.append($node)
     $display.append($div)
-
 }
 
 
