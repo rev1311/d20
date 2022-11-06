@@ -3,7 +3,7 @@ A dice rolling interface consisting of d4, d6, d8, d10, d12, d20, percentile, an
 
 ## Screen Grab (768px)
 
-![site](assets/d20_ss.png)
+![site](assets/d20_ss2.png)
 Alpha version displaying static dice, selected dice, and roll total
 
 ## Built With
