@@ -6,7 +6,7 @@ const rollMath = (val) => {
 
 // handles rolls & outcomes
 const handleRoll = () => {
-    const dice = document.querySelector('.display').children
+    const dice = Array.from(document.querySelector('.display').children)
     const $total = document.querySelector('.total')
     const $roll = document.querySelector('#roll')
     let total = 0
@@ -41,19 +41,13 @@ const clearRolls = () => {
 const setDice = (id) => {
     const $display = document.querySelector('.display')
     const $diceCount = $display.childElementCount
+    const dice = Array.from(document.querySelector('.display').children)
     const $div = document.createElement('div')
     const $node = document.querySelector(`#${id}`).cloneNode()
-    const $dataId = $node.closest('div').id
     $node.classList.remove('filter')
     
-    if(($dataId === 'dice_percent' || $dataId === 'dice_coin' || $dataId === 'dice_20' ) && $diceCount >= 1 ) return
+    if(dice[0] && (dice[0].firstChild.dataset.value === "20" || dice[0].firstChild.dataset.value === "percent" || dice[0].firstChild.dataset.value === "coin")) return
     if($diceCount >= 6) return
-    
-    // let finalForm = $div.parentElement.children[0].firstChild.id
-    
-    // if((finalForm === 'dice_percent' || finalForm === 'dice_coin' || finalForm === 'dice_20') && $diceCount >=1 ) {
-    //     $display.remove($display.lastChild)
-    // }
     
     $div.append($node)
     $display.append($div)
